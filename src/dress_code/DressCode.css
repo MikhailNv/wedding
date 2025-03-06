@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vioda+Libre&display=swap');
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
+/* Карточка */
+.dress-code-section {
+  background-color: white;
+  border: 1px solid #ddd;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Фото-блок */
+.color-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    justify-content: center;
+}
+
+.color-box {
+    min-height: 40px;
+    border-radius: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.first-color {
+    background-color: rgba(58, 60, 41);
+}
+
+.second-color {
+    background-color: rgba(123, 129, 106);
+}
+
+.third-color {
+    background-color: rgba(153, 150, 132);
+}
+
+.fourth-color {
+    background-color: rgba(105, 71, 48);
+}
+
+.dress-code-examples {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 50px;
+    justify-content: center;
+}
+
+.dress-code-examples-image {
+    border-radius: 200px;
+}
+
+.dress-code-examples-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Адаптивность */
+@media (max-width: 400px) {
+    .color-box {
+        min-height: 30px;
+        border-radius: 30px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}

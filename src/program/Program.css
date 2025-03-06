@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Vioda+Libre&display=swap');
+
+.program-section {
+    background-color: rgb(121, 129, 106);
+    border: 1px solid rgb(121, 129, 106);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    justify-content: center;
+}
+
+.program-section h1 {
+    color: #e0e0e0;
+}
+
+.program-body {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 60px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.schedule-item {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.left-side {
+    justify-content: left;
+    text-align: left;
+    float: left;
+}
+
+.right-side {
+    justify-content: right;
+    text-align: right;
+    float: right;
+}
+
+.time {
+    font-family: "League Script", serif;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #e0e0e0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.event {
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 15px;
+    padding-right: 15px;
+}
+
+.event p {
+    font-size: 1.4rem;
+    color: #e0e0e0;
+}
+
+.hyphen {
+    font-size: 1.4rem;
+    color: #e0e0e0;
+    /* margin-right: 10px; */
+}
+
+@media (max-width: 500px) {
+    .time {
+        font-size: 2.7rem;
+    }
+
+    .event p {
+        font-size: 1rem;
+    }
+    
+    .hyphen {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .time {
+        font-size: 2.5rem;
+    }
+}
