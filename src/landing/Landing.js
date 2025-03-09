@@ -35,7 +35,7 @@ const Landing = ({ navigate }) => {
             <Nav navigate={navigate}/>
             <WeddingInvite user={user}/>
             <Place />
-            <DressCode />
+            <DressCode user={user}/>
             <Program />
             <Organization />
             <Timer />

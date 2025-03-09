@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Vioda+Libre&display=swap');
 
 .vanue-section {
-    background-color: rgb(121, 129, 106);
-    border: 1px solid rgb(121, 129, 106);
+    background-color: rgb(189, 179, 163);
+    border: 1px solid rgb(189, 179, 163);
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
@@ -10,19 +10,19 @@
 }
 
 .vanue-section h1 {
-    color: #e0e0e0;
+    color: white
 }
 
 .vanue-body-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 20px;
     justify-content: center;
 }
 
 .vanue-container-text {
-    border: 2px solid #e0e0e0;
-    color: #e0e0e0;
+    border: 2px solid white;
+    color: white;
     padding: 5px;
     display: inline;
 }
@@ -31,21 +31,33 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 150px;
+    border-radius: 15px;
 }
 
 .vanue-container-image {
     overflow: hidden;
+    border-radius: 15px;
 }
 
 .vanue-container-image img {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
+    height: 200px;
+    object-fit: cover;
+    object-position: center 67%;
 }
 
-.venue-subtitle h2 {
-    font-size: 2rem;
+.venue-subtitle {
+    transition: .5s;
+}
+
+.venue-subtitle:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px white;
+    transition: .5s;
+}
+
+.venue-subtitle a {
+    font-size: 1.8rem;
     margin: 5px;
 }
 
@@ -55,11 +67,27 @@
 }
 
 .vanue-container-subtitle {
-    color: #e0e0e0;
+    color: white;
+}
+
+.venue-place1 {
+    grid-row-start: 1;
+}
+
+.venue-subtitle {
+    grid-row-start: 2;
+}
+
+.venue-text {
+    grid-row-start: 3;
+}
+
+.venue-place2 {
+    grid-row-start: 4;
 }
 
 @media (max-width: 768px) {
-    .venue-subtitle h2 {
+    .venue-subtitle a {
         font-size: 1.8rem;
         margin: 5px;
     }
@@ -71,7 +99,7 @@
 }
 
 @media (max-width: 600px) {
-    .venue-subtitle h2 {
+    .venue-subtitle a {
         font-size: 1.5rem;
         margin: 5px;
     }
@@ -90,26 +118,10 @@
   
 @media (max-width: 400px) {
     .vanue-container-center {
-        border-radius: 120px;
+        border-radius: 30px;
     }
 
-    .vanue-body-container {
-        grid-template-columns: 1fr;
-    }
-
-    .venue-place1 {
-        grid-row-start: 1;
-    }
-
-    .venue-subtitle {
-        grid-row-start: 2;
-    }
-
-    .venue-place2 {
-        grid-row-start: 3;
-    }
-
-    .venue-text {
-        grid-row-start: 4;
+    .vanue-container-image {
+        border-radius: 50px;
     }
 }

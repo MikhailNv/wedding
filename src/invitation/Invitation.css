@@ -69,20 +69,20 @@
 
 /* Дата свадьбы */
 .date-container {
-  border: 2px solid rgb(121, 129, 106);
-  padding: 20px 20px 10px 20px;
+  border: 2px solid rgb(189, 179, 163);
+  padding: 20px;
   border-radius: 20px;
-  font-family: "League Script", serif;
+  font-family: "Gaqire", serif;
   font-size: 3rem;
   font-weight: bold;
-  color: rgb(121, 129, 106);
+  color: rgb(189, 179, 163);
   margin: 0px;
 }
 
 /* Цитата */
 .quote {
   font-style: italic;
-  font-size: 1rem;
+  /* font-size: 1.5rem; */
   color: #777;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -117,7 +117,7 @@
   }
 
   .quote {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -143,6 +143,6 @@
   }
 
   .quote {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
   }
 }

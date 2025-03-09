@@ -4,7 +4,7 @@
     display: flex;
     width: 100vw;
     height: 100vh;
-    background-color: rgb(121, 129, 106);
+    background-color: rgb(189, 179, 163);
 }
 
 .login-form-container {
@@ -50,38 +50,44 @@
 }
 
 .login::placeholder, .psw::placeholder {
-    color: rgba(254, 194, 145);
+    color: white;
     font-size: 1rem;
 }
 
 .login {
     color: white;
+    font-family: "Poiret One", serif;
     font-size: .5rem;
     outline: none;
     background: url('./images/user-svgrepo-com.svg') no-repeat left;
-    border-bottom: 2px solid rgba(254, 194, 145);
+    border-bottom: 2px solid white;
     background-size: 30px;
     padding-left: 40px;
     font-size: 1.5rem;
+    border-radius: 0;
 }
 
 .psw {
     color: white;
+    font-family: "Poiret One", serif;
     font-size: .5rem;
     outline: none;
     background: url('./images/lock-alt-svgrepo-com.svg') no-repeat left;
-    border-bottom: 2px solid rgba(254, 194, 145);
+    border-bottom: 2px solid white;
     background-size: 30px;
     padding-left: 40px;
     font-size: 1.5rem;
+    border-radius: 0;
 }
 
 .apply {
-    color: rgb(121, 129, 106);
+    color: rgb(189, 179, 163);
+    font-family: "Poiret One", serif;
+    font-weight: bold;
     font-size: 1.5rem;
     border-radius: 20px;
     cursor: pointer;
-    background-color: rgba(254, 194, 145);
+    background-color: rgba(white);
 }
 
 @keyframes shake {

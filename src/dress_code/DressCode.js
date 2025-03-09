@@ -1,42 +1,68 @@
 import '../index.css'
 import './DressCode.css';
+import ACCOUNTS from '../accounts';
 import ImageGallery from "react-image-gallery";
-// import logo1 from './images/img1.jpg';
-// import logo2 from './images/img2.jpg';
-// import logo3 from './images/img3.jpg';
 import React from "react";
-
-const images = [
-    {
-    //   original: "https://i.pinimg.com/736x/d9/56/44/d95644e9e475320fa6dfcd95c463b542.jpg",
-      original: "https://i.pinimg.com/736x/db/38/83/db38838e8f0350e84ba52204cbdb5a10.jpg",
-    },
-    {
-    //   original: "https://i.pinimg.com/736x/20/8e/8e/208e8e810035aebf2a43c2eaa3629577.jpg",
-      original: "https://i.pinimg.com/736x/59/42/e7/5942e7c61e4635ebd0fabbaff29ee066.jpg"
-    },
-    {
-        original: "https://i.pinimg.com/736x/5d/56/a1/5d56a1ffcbb1c3eebff965c433b70c1f.jpg"
-    },
-    {
-    //   original: "https://i.pinimg.com/736x/d1/37/51/d13751dc2d0adc62a2d4453f5350fa4b.jpg",
-      original: "https://i.pinimg.com/736x/3c/5d/75/3c5d75749b0423e9a4fa95da9b8ced35.jpg"
-    },
-  ];
   
 
-const DressCode = () => {
+const DressCode = ({ user }) => {
+
+  const getImages = (login) => {
+    const images_male = [
+      {original: "https://i.pinimg.com/736x/ad/2a/eb/ad2aeb683b95e7ab7365a638a7089524.jpg",},
+      {original: "https://i.pinimg.com/736x/b5/e1/7c/b5e17c95268a7c4390e584dd7aff8db0.jpg",},
+      {original: "https://i.pinimg.com/736x/a2/f2/f6/a2f2f6f645d885ec0eb4eaaa6f68517e.jpg",},
+      {original: "https://i.pinimg.com/736x/cd/56/5b/cd565b7870e9013f7b279e8aae0a48fa.jpg",},
+    ];
+    const images_female = [
+      {original: "https://i.pinimg.com/736x/1d/57/e0/1d57e0ce77fd5057c54626ccf44a57e7.jpg",},
+      {original: "https://i.pinimg.com/736x/d6/b1/23/d6b123a32abb3916b3f838cf64029084.jpg",},
+      {original: "https://i.pinimg.com/736x/b7/95/98/b79598e678cb73e86e0b0643ef8c0f3d.jpg",},
+      {original: "https://i.pinimg.com/736x/f7/d4/c2/f7d4c20682aab562df585e37e398e176.jpg",},
+    ];
+
+    if (login != "" ) {
+      if (ACCOUNTS[login]["gender"] == "male") {return images_male}
+      else {return images_female};
+    }
+    else { return []; }
+  }
+
+  const getTone = (login, className) => {
+    if (login != "" ) {
+      if (ACCOUNTS[login]["gender"] == "male") {return `${className}-male`}
+      else {return `${className}-female`};
+    }
+    else { return ""; }
+  }
+
+  const titleRender = (login) => {
+    if (login != "") {
+      const stuff = ACCOUNTS[login]["gender"] == "female"
+      ? "Мы очень сильно стараемся над тем, чтобы этот день прошел идеально, поэтому будем благодарны если в своих образах ты отдашь предпочтение легким летним или коктейльным платьям в заданных оттенках"
+      : "Нам будет особенно приятно видеть тебя в нарядах цветовой гаммы нашей свадьбы"
+      return stuff
+    }
+  }
+
   return (
-    <section className="card dress-code-section middle-section">
+    <section className="card dress-code-section middle-section" id="dress-code-section">
       <h1 className="title">Dress Code</h1>
-      <p className="text">Нам будет особенно приятно видеть Вас в нарядах цветовой гаммы нашей свадьбы</p>
+      <p className="text">{titleRender(user)}</p>
       <div className="color-container">
-        <div className="first-color color-box"></div>
-        <div className="second-color color-box"></div>
-        <div className="third-color color-box"></div>
-        <div className="fourth-color color-box"></div>
+        <div className={`${getTone(user, "first-color")} color-box`}></div>
+        <div className={`${getTone(user, "second-color")} color-box`}></div>
+        <div className={`${getTone(user, "third-color")} color-box`}></div>
+        <div className={`${getTone(user, "fourth-color")} color-box`}></div>
       </div>
-      <ImageGallery showFullscreenButton={false} showNav={false} showBullets={true} showPlayButton={false} showThumbnails={false} items={images} />
+      <ImageGallery
+      showFullscreenButton={false}
+      showNav={false}
+      showBullets={true}
+      showPlayButton={false}
+      showThumbnails={false}
+      items={getImages(user)}
+      />
     </section>
   );
 };

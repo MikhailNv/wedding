@@ -15,7 +15,7 @@ const WeddingInvite = ({ user }) => {
 
   return (
     <section className="card invitation-section middle-section">
-      <h1 className="title">Wedding Invitation</h1>
+      <h1 className="title">Wedding<br />Invitation</h1>
       <div className="image-wrapper">
         <div className="image-border">
           <div className="image-border-inner">
@@ -28,7 +28,7 @@ const WeddingInvite = ({ user }) => {
       <div className="date-container-wrapper">
         <div className="date-container">29.07.2025</div>
       </div>
-      <p className="quote">“В этом мире ты всего лишь человек, но для кого-то ты – весь мир”</p>
+      <p className="text quote">“В этом мире ты всего лишь человек, но для кого-то ты – весь мир”</p>
     </section>
   );
 };

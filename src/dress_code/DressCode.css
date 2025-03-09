@@ -27,20 +27,36 @@
     margin-right: 10px;
 }
 
-.first-color {
-    background-color: rgba(58, 60, 41);
+.first-color-male {
+    background-color: rgba(17, 34, 80);
 }
 
-.second-color {
-    background-color: rgba(123, 129, 106);
+.second-color-male {
+    background-color: rgba(245, 240, 233);
 }
 
-.third-color {
-    background-color: rgba(153, 150, 132);
+.third-color-male {
+    background-color: rgba(189, 179, 163);
 }
 
-.fourth-color {
-    background-color: rgba(105, 71, 48);
+.fourth-color-male {
+    background-color: rgba(129, 151, 172);
+}
+
+.first-color-female {
+    background-color: rgba(179, 217, 224);
+}
+
+.second-color-female {
+    background-color: rgba(136, 144, 99);
+}
+
+.third-color-female {
+    background-color: rgba(226, 179, 194);
+}
+
+.fourth-color-female {
+    background-color: rgba(250, 227, 111);
 }
 
 .dress-code-examples {

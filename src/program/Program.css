@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Vioda+Libre&display=swap');
 
 .program-section {
-    background-color: rgb(121, 129, 106);
-    border: 1px solid rgb(121, 129, 106);
+    background-color: rgb(189, 179, 163);
+    border: 1px solid rgb(189, 179, 163);
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
@@ -10,7 +10,7 @@
 }
 
 .program-section h1 {
-    color: #e0e0e0;
+    color: white;
 }
 
 .program-body {
@@ -41,10 +41,10 @@
 }
 
 .time {
-    font-family: "League Script", serif;
+    font-family: "Gaqire", serif;
     font-size: 3rem;
     font-weight: bold;
-    color: #e0e0e0;
+    color: white;
     margin-top: 0px;
     margin-bottom: 0px;
     margin-right: 10px;
@@ -60,16 +60,20 @@
     align-items: center;
     padding-bottom: 15px;
     padding-right: 15px;
+    color: white;
+    font-size: 1.4rem;
 }
 
 .event p {
     font-size: 1.4rem;
-    color: #e0e0e0;
+    font-weight: bold;
+    color: white;
 }
 
 .hyphen {
+    font-weight: normal;
     font-size: 1.4rem;
-    color: #e0e0e0;
+    color: white;
     /* margin-right: 10px; */
 }
 
@@ -79,7 +83,7 @@
     }
 
     .event p {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
     
     .hyphen {
@@ -88,6 +92,10 @@
 }
 
 @media (max-width: 450px) {
+    .event p {
+        font-size: 1rem;
+    }
+
     .time {
         font-size: 2.5rem;
     }
