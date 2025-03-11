@@ -32,7 +32,7 @@ const Landing = ({ navigate }) => {
     }, []);
     return (
         <div className="landing-container">
-            <Nav navigate={navigate}/>
+            <Nav />
             <WeddingInvite user={user}/>
             <Place />
             <DressCode user={user}/>

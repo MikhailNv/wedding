@@ -1,12 +1,10 @@
 import '../index.css';
 import './Nav.css';
-import logout from "./images/logout.svg";
 import wedding_card from "./images/wedding_couple.svg"
-import Cookies from 'universal-cookie';
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 
-const NavMini = ({ menuOpen, handleMenuClick }) => {
+const NavMini = ({ handleMenuClick }) => {
     return (
         <div className="nav-section-mini-container">
             <div className="nav-img">
@@ -16,18 +14,19 @@ const NavMini = ({ menuOpen, handleMenuClick }) => {
     )
 }
 
-const NavMax = ({ menuOpen, handleMenuClick }) => {
+const NavMax = ({ handleMenuClick }) => {
     const handleNavLinkClick = () => {
         handleMenuClick();
     }
 
-    const handleClick = () => {
-        const cookies = new Cookies(null, { path: '/' });
-        cookies.remove("user");
-        cookies.remove("hash");
-        navigate('/');
-    }
-    
+    // TODO: logout
+    // const handleClick = () => {
+    //     const cookies = new Cookies(null, { path: '/' });
+    //     cookies.remove("user");
+    //     cookies.remove("hash");
+    //     navigate('/');
+    // }
+
     return (
         <div className="nav-section-max-container">
             <div className="menu-item-container">
@@ -60,7 +59,7 @@ const NavMax = ({ menuOpen, handleMenuClick }) => {
     )
 }
 
-const Nav = ({ navigate }) => {
+const Nav = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const handleMenuClick = () => {
         if (!menuOpen === false) { document.body.style.overflow = "scroll"; }
@@ -74,8 +73,8 @@ const Nav = ({ navigate }) => {
         >
             { 
                 menuOpen
-                ? <NavMax menuOpen={menuOpen} handleMenuClick={handleMenuClick} />
-                : <NavMini menuOpen={menuOpen} handleMenuClick={handleMenuClick} />
+                ? <NavMax handleMenuClick={handleMenuClick} />
+                : <NavMini handleMenuClick={handleMenuClick} />
             }
         </section>
     )

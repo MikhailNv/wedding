@@ -17,7 +17,7 @@ const Place = () => {
                     <img src={logo2} alt="Место проведения" />
                 </div>
                 <div className="vanue-container-text vanue-container-center venue-subtitle" onClick={handleClick}>
-                    <a className="subtitle white-text">ЗАГОРОДНАЯ ПЛОЩАДКА "ЗАБЕРЕГ"</a> {/*<br />Ленинградская область, 41К-313, 30*/}
+                    <a className="subtitle white-text">ЗАГОРОДНАЯ ПЛОЩАДКА "ЗАБЕРЕГ"</a>
                 </div>
                 <div className="text vanue-container-center venue-text">
                     <p className="white-text">До площадки можно добраться любым удобным способом. После банкета будет организован траснфер до ближайшей станции метро!</p>

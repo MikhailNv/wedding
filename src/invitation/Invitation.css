@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Script&display=swap');
-
 /* Карточка */
 .invitation-section {
   background-color: white;
@@ -82,7 +80,6 @@
 /* Цитата */
 .quote {
   font-style: italic;
-  /* font-size: 1.5rem; */
   color: #777;
   margin-top: 0px;
   margin-bottom: 0px;

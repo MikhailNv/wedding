@@ -12,7 +12,7 @@ const Organization = () => {
                 <img src={logo1} alt="Место проведения" />
             </div>
             <p className="text">Пожалуйста, заполни форму обратной связи до 01.07.25, нажав на кнопку ниже</p>
-            <button className="organization-form" onClick={() => window.open("https://workspace.google.com/products/forms/")}> Перейти к форме</button>
+            <button className="organization-form" onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSdP9yndhdsZkLn5eydxKJ6ykI-HCpTYErR_UZAriRHLgLnVAA/viewform?usp=header")}> Перейти к форме</button>
         </section>
     );
 };

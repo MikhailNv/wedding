@@ -1,29 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Vioda+Libre&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Cormorant+Unicase:wght@300;400;500;600;700&family=Poiret+One&family=Ysabeau+SC:wght@1..1000&family=Zen+Old+Mincho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 
 @font-face {
   font-family: "Gaqire";
   src: url("./Gaqire.otf");
 }
-
-
-/**/
-.blue {
-  color: rgba(179, 217, 224)
-}
-.green {
-  color: rgba(136, 144, 99)
-}
-.pink {
-  color: rgba(226, 179, 194)
-}
-.yellow {
-  color: rgba(250, 227, 111)
-}
-/**/
-
 
 * {
   margin: 0;
