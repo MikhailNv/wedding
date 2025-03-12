@@ -1,7 +1,7 @@
 {
   "name": "wedding-site",
   "version": "0.1.0",
-  "homepage": "https://mikhailnv.github.io/wedding",
+  "homepage": "https://MikhailNv.github.io/wedding",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
