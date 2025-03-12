@@ -1,6 +1,6 @@
 const ACCOUNTS = {
-    "mnaumov": {"displayName": "Мишулька", "gender": "male"},
-    "szlatina": {"displayName": "Сашуля", "gender": "female"}
+    "5e7a02a5243ffe4337eb739ad9409890f19ce93490cf6154bbc94641d1537957": "U2FsdGVkX1+NqpjE65tc/smLcv/QkXN+HGDeSVh38Zt1rf/qDuXKZYH11WcFW6NWMH8MCwHzwUVdrn/cckTv8g==",
+    "b42a1e7a750c010a4e4152524d3a2e523df0622f9d966476f0f15688e0d26eb7": "U2FsdGVkX18EHxCga7jVXHEWrzEOSnw3URP9pNSpe2uInUiPZQV54d8RmE2QRBfUUDMtBcX+Ji1VKfp9hp8jqPjrCtkWt6WsJLaqpEsvDNo="
 };
 
 export default ACCOUNTS;

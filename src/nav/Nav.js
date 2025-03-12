@@ -52,9 +52,6 @@ const NavMax = ({ handleMenuClick }) => {
             <div className="menu-close" onClick={handleMenuClick}>
                 <a className="subtitle">Close</a>
             </div>
-            <div className="menu-close" onClick={handleMenuClick}>
-                <a className="subtitle">Exit</a>
-            </div>
         </div>
     )
 }

@@ -1,15 +1,28 @@
 import Auth from './auth/Auth';
 import Landing from './landing/Landing';
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+
+
+const WeddingRouter = ({ navigate }) => {
+    useEffect(() => {
+        navigate('/wedding/login');
+    }, []);
+
+    return (
+        <Routes>
+            <Route path="/login" element={<Auth navigate={navigate}/>} />
+            <Route path="/invitation" element={<Landing navigate={navigate}/>} />
+        </Routes>
+    );
+};
 
 
 const Root = () => {
     const navigate = useNavigate();
     return (
         <Routes>
-            <Route path="/" element={<Auth navigate={navigate}/>} />
-            <Route path="/invitation" element={<Landing navigate={navigate}/>} />
+            <Route path="/wedding/*" element={<WeddingRouter navigate={navigate}/>} />
         </Routes>
     );
 };

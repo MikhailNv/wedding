@@ -2,12 +2,14 @@ import '../index.css'
 import './Invitation.css';
 import ACCOUNTS from '../accounts';
 import logo from './images/img.jpeg';
+import CryptoJS from 'crypto-js';
 import React from "react";
 
-const WeddingInvite = ({ user }) => {
+const WeddingInvite = ({ user, id }) => {
   const generateSubtitle = (user) => {
     if (user != "") {
-      const user_info = ACCOUNTS[user];
+      const bytes_user_info = CryptoJS.AES.decrypt(ACCOUNTS[user], id);
+      const user_info = JSON.parse(bytes_user_info.toString(CryptoJS.enc.Utf8));
       let subtitle = `${user_info["gender"] == "male" ? "ДОРОГОЙ" : "ДОРОГАЯ"} ${user_info["displayName"].toUpperCase()}!`;
       return subtitle;
     }

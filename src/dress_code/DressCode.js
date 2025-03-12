@@ -2,12 +2,13 @@ import '../index.css'
 import './DressCode.css';
 import ACCOUNTS from '../accounts';
 import ImageGallery from "react-image-gallery";
+import CryptoJS from 'crypto-js';
 import React from "react";
   
 
-const DressCode = ({ user }) => {
+const DressCode = ({ user, id }) => {
 
-  const getImages = (login) => {
+  const getImages = (login, id) => {
     const images_male = [
       {original: "https://i.pinimg.com/736x/ad/2a/eb/ad2aeb683b95e7ab7365a638a7089524.jpg",},
       {original: "https://i.pinimg.com/736x/b5/e1/7c/b5e17c95268a7c4390e584dd7aff8db0.jpg",},
@@ -22,23 +23,29 @@ const DressCode = ({ user }) => {
     ];
 
     if (login != "" ) {
-      if (ACCOUNTS[login]["gender"] == "male") {return images_male}
+      const bytes_user_info = CryptoJS.AES.decrypt(ACCOUNTS[login], id);
+      const user_info = JSON.parse(bytes_user_info.toString(CryptoJS.enc.Utf8));
+      if (user_info["gender"] == "male") {return images_male}
       else {return images_female};
     }
     else { return []; }
   }
 
-  const getTone = (login, className) => {
+  const getTone = (login, id, className) => {
     if (login != "" ) {
-      if (ACCOUNTS[login]["gender"] == "male") {return `${className}-male`}
+      const bytes_user_info = CryptoJS.AES.decrypt(ACCOUNTS[login], id);
+      const user_info = JSON.parse(bytes_user_info.toString(CryptoJS.enc.Utf8));
+      if (user_info["gender"] == "male") {return `${className}-male`}
       else {return `${className}-female`};
     }
     else { return ""; }
   }
 
-  const titleRender = (login) => {
+  const titleRender = (login, id) => {
     if (login != "") {
-      const stuff = ACCOUNTS[login]["gender"] == "female"
+      const bytes_user_info = CryptoJS.AES.decrypt(ACCOUNTS[login], id);
+      const user_info = JSON.parse(bytes_user_info.toString(CryptoJS.enc.Utf8));
+      const stuff = user_info["gender"] == "female"
       ? "Мы очень сильно стараемся над тем, чтобы этот день прошел идеально, поэтому будем благодарны если в своих образах ты отдашь предпочтение легким летним или коктейльным платьям в заданных оттенках"
       : "Нам будет особенно приятно видеть тебя в нарядах цветовой гаммы нашей свадьбы"
       return stuff
@@ -48,12 +55,12 @@ const DressCode = ({ user }) => {
   return (
     <section className="card dress-code-section middle-section" id="dress-code-section">
       <h1 className="title">Dress Code</h1>
-      <p className="text">{titleRender(user)}</p>
+      <p className="text">{titleRender(user, id)}</p>
       <div className="color-container">
-        <div className={`${getTone(user, "first-color")} color-box`}></div>
-        <div className={`${getTone(user, "second-color")} color-box`}></div>
-        <div className={`${getTone(user, "third-color")} color-box`}></div>
-        <div className={`${getTone(user, "fourth-color")} color-box`}></div>
+        <div className={`${getTone(user, id, "first-color")} color-box`}></div>
+        <div className={`${getTone(user, id, "second-color")} color-box`}></div>
+        <div className={`${getTone(user, id, "third-color")} color-box`}></div>
+        <div className={`${getTone(user, id, "fourth-color")} color-box`}></div>
       </div>
       <ImageGallery
       showFullscreenButton={false}
@@ -61,7 +68,7 @@ const DressCode = ({ user }) => {
       showBullets={true}
       showPlayButton={false}
       showThumbnails={false}
-      items={getImages(user)}
+      items={getImages(user, id)}
       />
     </section>
   );

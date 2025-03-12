@@ -3,6 +3,7 @@ import ACCOUNTS from '../accounts';
 import Builder from '../builder';
 import logo from "./images/wedding-rings-with-a-heart-svgrepo-com.svg";
 import Cookies from 'universal-cookie';
+import { sha256 } from 'js-sha256';
 import React, {useState, useEffect} from "react";
 
 const Auth = ({ navigate }) => {
@@ -14,18 +15,18 @@ const Auth = ({ navigate }) => {
         const cookie_user = cookies.get("user");
         const cookie_hash = cookies.get("hash");
         if (cookie_user && cookie_hash) {
-            const access = Builder(cookie_user) === cookie_hash ? true : false;
+            const access = sha256(Builder(cookie_user)) === cookie_hash ? true : false;
             if (access) {
-                navigate('/invitation');
+                navigate('/wedding/invitation');
             }
         }
     }, []);
 
     const checkAccess = (login, psw) => {
         var check_access = false;
-        if (login in ACCOUNTS) {
-            console.log(Builder(login));
-            if (Builder(login) === psw) { check_access = true; }
+        const login_hash = sha256(login);
+        if (login_hash in ACCOUNTS) {
+            if (Builder(login_hash) === psw) { check_access = true; }
             else { check_access = false; }
         }
         else { check_access = false; };
@@ -35,11 +36,12 @@ const Auth = ({ navigate }) => {
     const handleApply = () => {
         const access = checkAccess(login, psw);
         if (access) {
+            const login_hash = sha256(login);
             let expires = new Date()
             expires.setTime(expires.getTime() + 86400000)
-            cookies.set("user", login, { path: "/", expires: expires })
-            cookies.set("hash", Builder(login), { path: "/", expires: expires })
-            navigate('/invitation');
+            cookies.set("user", login_hash, { path: "/", expires: expires })
+            cookies.set("hash", sha256(Builder(login_hash)), { path: "/", expires: expires })
+            navigate('/wedding/invitation');
         }
         else {
             var login_inp = document.getElementById('login');

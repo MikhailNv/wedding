@@ -8,9 +8,11 @@ import Organization from '../organization/Organization';
 import Timer from '../timer/Timer';
 import Builder from '../builder';
 import Cookies from 'universal-cookie';
+import { sha256 } from 'js-sha256';
 import React, {useEffect, useState} from "react";
 
 const Landing = ({ navigate }) => {
+    const [id, setId] = useState("");
     const [user, setUser] = useState("");
 
     useEffect(() => {
@@ -18,24 +20,26 @@ const Landing = ({ navigate }) => {
         const cookie_user = cookies.get("user");
         const cookie_hash = cookies.get("hash");
         if (cookie_user && cookie_hash) {
-            const access = Builder(cookie_user) === cookie_hash ? true : false;
+            const build_id = Builder(cookie_user);
+            const access = sha256(build_id) === cookie_hash ? true : false;
             if (!access) {
-                navigate('/');
+                navigate('/wedding/login');
             }
             else {
+                setId(build_id);
                 setUser(cookie_user);
             }
         }
         else {
-            navigate('/');
+            navigate('/wedding/login');
         }
     }, []);
     return (
         <div className="landing-container">
             <Nav />
-            <WeddingInvite user={user}/>
+            <WeddingInvite user={user} id={id}/>
             <Place />
-            <DressCode user={user}/>
+            <DressCode user={user} id={id}/>
             <Program />
             <Organization />
             <Timer />
