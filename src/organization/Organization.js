@@ -3,7 +3,11 @@ import './Organization.css';
 import logo1 from './images/image.jpg';
 import React from "react";
 
-const Organization = () => {
+const Organization = ({userInfo}) => {
+    const getName = (userInfo) => {
+        return userInfo["formDisplayName"];
+    }
+    
     return (
         <section className="card organization-section middle-section" id="organization-section">
             <h1 className="title">Organization</h1>
@@ -12,7 +16,11 @@ const Organization = () => {
                 <img src={logo1} alt="Место проведения" />
             </div>
             <p className="text">Пожалуйста, заполни форму обратной связи до 01.07.25, нажав на кнопку ниже</p>
-            <button className="organization-form" onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSdP9yndhdsZkLn5eydxKJ6ykI-HCpTYErR_UZAriRHLgLnVAA/viewform?usp=header")}> Перейти к форме</button>
+            <button
+            className="organization-form"
+            onClick={
+                () => window.open(`https://docs.google.com/forms/d/e/1FAIpQLSdP9yndhdsZkLn5eydxKJ6ykI-HCpTYErR_UZAriRHLgLnVAA/viewform?usp=pp_url&entry.2092238618=${getName(userInfo)}`)
+            }>Перейти к форме</button>
         </section>
     );
 };

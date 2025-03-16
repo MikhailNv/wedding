@@ -25,21 +25,21 @@ const Program = () => {
             <h1 className="title">Program</h1>
             <div className="program-body">
                 <div className="schedule-item left-side">
-                    <div className="time" id="first-time">14:30</div>
+                    <div className="time" id="first-time">15:00</div>
                     <div className="event">—</div>
                     <div className="event" id="first-desc">
                         <p className="text">Сбор гостей</p>
                     </div>
                 </div>       
                 <div className={`schedule-item ${sideChange ? "left-side" : "right-side"}`}>
-                    <div className="time" id="second-time">15:00</div>
+                    <div className="time" id="second-time">15:30</div>
                     <div className="event">—</div>
                     <div className="event" id="second-desc">
                         <p className="text">Церемония бракосочетания</p>
                     </div>
                 </div>
                 <div className="schedule-item left-side">
-                    <div className="time" id="third-time">16:00</div>
+                    <div className="time" id="third-time">16:30</div>
                     <div className="event">—</div>
                     <div className="event" id="third-desc">
                         <p className="text">Свадебный банкет</p>

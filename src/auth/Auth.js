@@ -6,6 +6,8 @@ import Cookies from 'universal-cookie';
 import { sha256 } from 'js-sha256';
 import React, {useState, useEffect} from "react";
 
+import CryptoJS from 'crypto-js';
+
 const Auth = ({ navigate }) => {
     const [login, setLogin] = useState("");
     const [psw, setPsw] = useState("");
@@ -25,6 +27,9 @@ const Auth = ({ navigate }) => {
     const checkAccess = (login, psw) => {
         var check_access = false;
         const login_hash = sha256(login);
+        console.log(CryptoJS.AES.encrypt(JSON.stringify({"displayName": "роберт", "formDisplayName": "Роберт Бородий", "gender": "male"}), psw).toString())
+        console.log(`BUILDER: ${Builder(login_hash)}`)
+        console.log(`LOGIN_HASH: ${login_hash}`)
         if (login_hash in ACCOUNTS) {
             if (Builder(login_hash) === psw) { check_access = true; }
             else { check_access = false; }
@@ -87,6 +92,7 @@ const Auth = ({ navigate }) => {
                     id="login"
                     className="login"
                     placeholder="Логин"
+                    autoComplete="off"
                     onChange={e => setLogin(e.target.value)}
                     />
                     <input
@@ -94,6 +100,7 @@ const Auth = ({ navigate }) => {
                     className="psw"
                     placeholder="Пароль"
                     type="password"
+                    autoComplete="off"
                     onChange={e => setPsw(e.target.value)}
                     />
                     <button className="apply" onClick={handleApply}>Войти</button>

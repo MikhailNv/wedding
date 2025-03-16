@@ -33,16 +33,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid white;
     padding: 5px;
     margin: 10px 10px;
 }
 
-.menu-item:hover {
-    border-bottom: 1px solid rgb(189, 179, 163);
-}
-
-.menu-item a, .menu-close a {
+.menu-item a {
     font-size: 1.5rem;
     font-family: "Gaqire", serif;
     text-decoration: none;
@@ -53,17 +48,33 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 20px;
+    border-radius: 50%;
     padding: 10px;
-    border: 1px solid rgb(189, 179, 163);
+    border: 1px solid white;
+    transition: border .4s ease-in-out;
+    width: 40px;
+    height: 40px;
+    justify-self: center;
 }
 
 .menu-close:hover {
-    background-color: rgb(189, 179, 163);
+    border: 1px solid rgb(189, 179, 163);
+    animation: .2s ease-in rotate;
 }
 
-.menu-close:hover a {
-    color: white;
+.menu-close img {
+    width: 30px;
+    height: 30px;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(270deg);
+    }
 }
 
 /* Закрытое меню */

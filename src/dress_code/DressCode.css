@@ -75,11 +75,29 @@
 }
 
 /* Адаптивность */
-@media (max-width: 400px) {
+@media (max-width: 450px) {
     .color-box {
         min-height: 30px;
         border-radius: 30px;
         margin-left: 10px;
         margin-right: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .color-box {
+        min-height: 30px;
+        border-radius: 20px;
+        margin-left: 7px;
+        margin-right: 7px;
+    }
+}
+
+@media (max-width: 350px) {
+    .color-box {
+        min-height: 25px;
+        border-radius: 20px;
+        margin-left: 5px;
+        margin-right: 5px;
     }
 }

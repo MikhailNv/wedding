@@ -5,12 +5,9 @@ import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 
 
 const WeddingRouter = ({ navigate }) => {
-    useEffect(() => {
-        navigate('/wedding/login');
-    }, []);
-
     return (
         <Routes>
+            <Route index element={<Auth navigate={navigate}/>}/>
             <Route path="/login" element={<Auth navigate={navigate}/>} />
             <Route path="/invitation" element={<Landing navigate={navigate}/>} />
         </Routes>

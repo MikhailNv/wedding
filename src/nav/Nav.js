@@ -1,7 +1,9 @@
 import '../index.css';
 import './Nav.css';
 import wedding_card from "./images/wedding_couple.svg"
-import React, { useState } from "react";
+import up_logo from "./images/up.svg"
+import close_logo from "./images/close.svg"
+import React, { useState, useEffect } from "react";
 
 
 const NavMini = ({ handleMenuClick }) => {
@@ -34,6 +36,9 @@ const NavMax = ({ handleMenuClick }) => {
                     <img src={wedding_card} alt="card-logo"></img>
                 </div>
                 <div className="menu-item">
+                    <a className="subtitle" href="#invitation-section" onClick={handleNavLinkClick}>Invitation</a>
+                </div>
+                <div className="menu-item">
                     <a className="subtitle" href="#vanue-section" onClick={handleNavLinkClick}>Location</a>
                 </div>
                 <div className="menu-item">
@@ -49,8 +54,11 @@ const NavMax = ({ handleMenuClick }) => {
                     <a className="subtitle" href="#timer" onClick={handleNavLinkClick}>Time left</a>
                 </div>
             </div>
-            <div className="menu-close" onClick={handleMenuClick}>
-                <a className="subtitle">Close</a>
+            <div
+            className="menu-close"
+            onClick={handleMenuClick}
+            >
+                <img src={close_logo} alt="close_logo"></img>
             </div>
         </div>
     )

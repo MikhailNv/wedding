@@ -1,14 +1,12 @@
 import '../index.css'
 import './DressCode.css';
-import ACCOUNTS from '../accounts';
 import ImageGallery from "react-image-gallery";
-import CryptoJS from 'crypto-js';
 import React from "react";
   
 
-const DressCode = ({ user, id }) => {
+const DressCode = ({ userInfo }) => {
 
-  const getImages = (login, id) => {
+  const getImages = (userInfo) => {
     const images_male = [
       {original: "https://i.pinimg.com/736x/ad/2a/eb/ad2aeb683b95e7ab7365a638a7089524.jpg",},
       {original: "https://i.pinimg.com/736x/b5/e1/7c/b5e17c95268a7c4390e584dd7aff8db0.jpg",},
@@ -22,45 +20,31 @@ const DressCode = ({ user, id }) => {
       {original: "https://i.pinimg.com/736x/f7/d4/c2/f7d4c20682aab562df585e37e398e176.jpg",},
     ];
 
-    if (login != "" ) {
-      const bytes_user_info = CryptoJS.AES.decrypt(ACCOUNTS[login], id);
-      const user_info = JSON.parse(bytes_user_info.toString(CryptoJS.enc.Utf8));
-      if (user_info["gender"] == "male") {return images_male}
-      else {return images_female};
-    }
-    else { return []; }
+    if (userInfo["gender"] == "male") {return images_male}
+    else {return images_female};
   }
 
-  const getTone = (login, id, className) => {
-    if (login != "" ) {
-      const bytes_user_info = CryptoJS.AES.decrypt(ACCOUNTS[login], id);
-      const user_info = JSON.parse(bytes_user_info.toString(CryptoJS.enc.Utf8));
-      if (user_info["gender"] == "male") {return `${className}-male`}
-      else {return `${className}-female`};
-    }
-    else { return ""; }
+  const getTone = (userInfo, className) => {
+    if (userInfo["gender"] == "male") {return `${className}-male`}
+    else {return `${className}-female`};
   }
 
-  const titleRender = (login, id) => {
-    if (login != "") {
-      const bytes_user_info = CryptoJS.AES.decrypt(ACCOUNTS[login], id);
-      const user_info = JSON.parse(bytes_user_info.toString(CryptoJS.enc.Utf8));
-      const stuff = user_info["gender"] == "female"
-      ? "Мы очень сильно стараемся над тем, чтобы этот день прошел идеально, поэтому будем благодарны если в своих образах ты отдашь предпочтение легким летним или коктейльным платьям в заданных оттенках"
-      : "Нам будет особенно приятно видеть тебя в нарядах цветовой гаммы нашей свадьбы"
-      return stuff
-    }
+  const titleRender = (userInfo) => {
+    const stuff = userInfo["gender"] == "female"
+    ? "Мы очень сильно стараемся над тем, чтобы этот день прошел идеально, поэтому будем благодарны если в своих образах ты отдашь предпочтение легким летним или коктейльным платьям в заданных оттенках"
+    : "Нам будет особенно приятно видеть тебя в нарядах цветовой гаммы нашей свадьбы"
+    return stuff
   }
 
   return (
     <section className="card dress-code-section middle-section" id="dress-code-section">
       <h1 className="title">Dress Code</h1>
-      <p className="text">{titleRender(user, id)}</p>
+      <p className="text">{titleRender(userInfo)}</p>
       <div className="color-container">
-        <div className={`${getTone(user, id, "first-color")} color-box`}></div>
-        <div className={`${getTone(user, id, "second-color")} color-box`}></div>
-        <div className={`${getTone(user, id, "third-color")} color-box`}></div>
-        <div className={`${getTone(user, id, "fourth-color")} color-box`}></div>
+        <div className={`${getTone(userInfo, "first-color")} color-box`}></div>
+        <div className={`${getTone(userInfo, "second-color")} color-box`}></div>
+        <div className={`${getTone(userInfo, "third-color")} color-box`}></div>
+        <div className={`${getTone(userInfo, "fourth-color")} color-box`}></div>
       </div>
       <ImageGallery
       showFullscreenButton={false}
@@ -68,7 +52,7 @@ const DressCode = ({ user, id }) => {
       showBullets={true}
       showPlayButton={false}
       showThumbnails={false}
-      items={getImages(user, id)}
+      items={getImages(userInfo)}
       />
     </section>
   );

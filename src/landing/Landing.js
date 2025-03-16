@@ -8,12 +8,23 @@ import Organization from '../organization/Organization';
 import Timer from '../timer/Timer';
 import Builder from '../builder';
 import Cookies from 'universal-cookie';
+import CryptoJS from 'crypto-js';
 import { sha256 } from 'js-sha256';
+import ACCOUNTS from '../accounts';
 import React, {useEffect, useState} from "react";
 
 const Landing = ({ navigate }) => {
-    const [id, setId] = useState("");
-    const [user, setUser] = useState("");
+    const DEFAULT_USER_INFO = {"displayName": "", "formDisplayName": "", "gender": ""};
+    const [userInfo, setUserInfo] = useState(DEFAULT_USER_INFO)
+
+    const getUserInfo = (user, id) => {
+        if (user != "" ) {
+            const bytes_user_info = CryptoJS.AES.decrypt(ACCOUNTS[user], id);
+            const user_info = JSON.parse(bytes_user_info.toString(CryptoJS.enc.Utf8));
+            return user_info;
+        }
+        else { return DEFAULT_USER_INFO; }
+    }
 
     useEffect(() => {
         const cookies = new Cookies(null, { path: '/' });
@@ -26,8 +37,7 @@ const Landing = ({ navigate }) => {
                 navigate('/wedding/login');
             }
             else {
-                setId(build_id);
-                setUser(cookie_user);
+                setUserInfo(getUserInfo(cookie_user, build_id))
             }
         }
         else {
@@ -37,11 +47,11 @@ const Landing = ({ navigate }) => {
     return (
         <div className="landing-container">
             <Nav />
-            <WeddingInvite user={user} id={id}/>
+            <WeddingInvite userInfo={userInfo}/>
             <Place />
-            <DressCode user={user} id={id}/>
+            <DressCode userInfo={userInfo}/>
             <Program />
-            <Organization />
+            <Organization userInfo={userInfo}/>
             <Timer />
         </div>
     );

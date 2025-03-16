@@ -143,3 +143,29 @@
     font-size: 0.9rem;
   }
 }
+
+@media (max-width: 340px) {
+  .image-border {
+    width: 180px;
+    height: 280px;
+  }
+
+  .image-border::before,
+  .image-border::after {
+    width: 200px;
+    height: 300px;
+  }
+
+  .image-border-inner {
+    width: 180px;
+    height: 260px;
+  }
+
+  .date {
+    padding: 5px 10px;
+  }
+
+  .quote {
+    font-size: 0.9rem;
+  }
+}

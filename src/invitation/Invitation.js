@@ -1,22 +1,16 @@
 import '../index.css'
 import './Invitation.css';
-import ACCOUNTS from '../accounts';
 import logo from './images/img.jpeg';
-import CryptoJS from 'crypto-js';
 import React from "react";
 
-const WeddingInvite = ({ user, id }) => {
-  const generateSubtitle = (user) => {
-    if (user != "") {
-      const bytes_user_info = CryptoJS.AES.decrypt(ACCOUNTS[user], id);
-      const user_info = JSON.parse(bytes_user_info.toString(CryptoJS.enc.Utf8));
-      let subtitle = `${user_info["gender"] == "male" ? "ДОРОГОЙ" : "ДОРОГАЯ"} ${user_info["displayName"].toUpperCase()}!`;
-      return subtitle;
-    }
+const WeddingInvite = ({ userInfo }) => {
+  const generateSubtitle = (userInfo) => {
+    let subtitle = `${userInfo["gender"] == "male" ? "ДОРОГОЙ" : "ДОРОГАЯ"}, ${userInfo["displayName"].toUpperCase()}!`;
+    return subtitle;
   }
 
   return (
-    <section className="card invitation-section middle-section">
+    <section className="card invitation-section middle-section" id="invitation-section">
       <h1 className="title">Wedding<br />Invitation</h1>
       <div className="image-wrapper">
         <div className="image-border">
@@ -25,7 +19,7 @@ const WeddingInvite = ({ user, id }) => {
           </div>
         </div>
       </div>
-      <h2 className="subtitle">{generateSubtitle(user)}</h2>
+      <h2 className="subtitle">{generateSubtitle(userInfo)}</h2>
       <p className="text">Приглашаем тебя разделить с нами радость особенного дня - нашей свадьбы!</p>
       <div className="date-container-wrapper">
         <div className="date-container">29.07.2025</div>
