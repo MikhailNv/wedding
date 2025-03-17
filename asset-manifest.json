@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.da2f6e22.css",
-    "main.js": "/static/js/main.4494433f.js",
-    "static/js/453.9a6f8126.chunk.js": "/static/js/453.9a6f8126.chunk.js",
-    "static/media/img2.png": "/static/media/img2.ae0da91d7dd126aa1397.png",
-    "static/media/img1.png": "/static/media/img1.5e111af06f4d569f673f.png",
-    "static/media/img.jpeg": "/static/media/img.6d952924b3af5755edb0.jpeg",
-    "static/media/image.jpg": "/static/media/image.63054a5ec540fc9f52c1.jpg",
-    "static/media/Gaqire.otf": "/static/media/Gaqire.7b126649b265be939689.otf",
-    "static/media/close.svg": "/static/media/close.52568df89557552f447c4e2ca56b5133.svg",
-    "static/media/wedding_couple.svg": "/static/media/wedding_couple.458c97136cacaf36a0839157005ebc96.svg",
-    "static/media/wedding-rings-with-a-heart-svgrepo-com.svg": "/static/media/wedding-rings-with-a-heart-svgrepo-com.985a27e75c08c2e7b83be94cb29a8b73.svg",
-    "static/media/lock-alt-svgrepo-com.svg": "/static/media/lock-alt-svgrepo-com.f9d84fb8f17b6c7b6efa.svg",
-    "static/media/user-svgrepo-com.svg": "/static/media/user-svgrepo-com.42fe1d5199cb6efb574a.svg",
-    "index.html": "/index.html",
-    "main.da2f6e22.css.map": "/static/css/main.da2f6e22.css.map",
-    "main.4494433f.js.map": "/static/js/main.4494433f.js.map",
-    "453.9a6f8126.chunk.js.map": "/static/js/453.9a6f8126.chunk.js.map"
+    "main.css": "/wedding/static/css/main.81a29ec6.css",
+    "main.js": "/wedding/static/js/main.30c3c6bd.js",
+    "static/js/453.9a6f8126.chunk.js": "/wedding/static/js/453.9a6f8126.chunk.js",
+    "static/media/img2.png": "/wedding/static/media/img2.ae0da91d7dd126aa1397.png",
+    "static/media/img1.png": "/wedding/static/media/img1.5e111af06f4d569f673f.png",
+    "static/media/img.jpeg": "/wedding/static/media/img.6d952924b3af5755edb0.jpeg",
+    "static/media/image.jpg": "/wedding/static/media/image.63054a5ec540fc9f52c1.jpg",
+    "static/media/Gaqire.otf": "/wedding/static/media/Gaqire.7b126649b265be939689.otf",
+    "static/media/close.svg": "/wedding/static/media/close.52568df89557552f447c4e2ca56b5133.svg",
+    "static/media/wedding_couple.svg": "/wedding/static/media/wedding_couple.458c97136cacaf36a0839157005ebc96.svg",
+    "static/media/wedding-rings-with-a-heart-svgrepo-com.svg": "/wedding/static/media/wedding-rings-with-a-heart-svgrepo-com.985a27e75c08c2e7b83be94cb29a8b73.svg",
+    "static/media/lock-alt-svgrepo-com.svg": "/wedding/static/media/lock-alt-svgrepo-com.f9d84fb8f17b6c7b6efa.svg",
+    "static/media/user-svgrepo-com.svg": "/wedding/static/media/user-svgrepo-com.42fe1d5199cb6efb574a.svg",
+    "index.html": "/wedding/index.html",
+    "main.81a29ec6.css.map": "/wedding/static/css/main.81a29ec6.css.map",
+    "main.30c3c6bd.js.map": "/wedding/static/js/main.30c3c6bd.js.map",
+    "453.9a6f8126.chunk.js.map": "/wedding/static/js/453.9a6f8126.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.da2f6e22.css",
-    "static/js/main.4494433f.js"
+    "static/css/main.81a29ec6.css",
+    "static/js/main.30c3c6bd.js"
   ]
 }
