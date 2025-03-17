@@ -6,7 +6,6 @@ import Cookies from 'universal-cookie';
 import { sha256 } from 'js-sha256';
 import React, {useState, useEffect} from "react";
 
-import CryptoJS from 'crypto-js';
 
 const Auth = ({ navigate }) => {
     const [login, setLogin] = useState("");
@@ -19,7 +18,7 @@ const Auth = ({ navigate }) => {
         if (cookie_user && cookie_hash) {
             const access = sha256(Builder(cookie_user)) === cookie_hash ? true : false;
             if (access) {
-                navigate('/invitation');
+                navigate('/wedding/invitation');
             }
         }
     }, []);
@@ -43,7 +42,7 @@ const Auth = ({ navigate }) => {
             expires.setTime(expires.getTime() + 86400000)
             cookies.set("user", login_hash, { path: "/", expires: expires })
             cookies.set("hash", sha256(Builder(login_hash)), { path: "/", expires: expires })
-            navigate('/invitation');
+            navigate('/wedding/invitation');
         }
         else {
             var login_inp = document.getElementById('login');

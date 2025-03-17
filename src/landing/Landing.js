@@ -12,10 +12,12 @@ import CryptoJS from 'crypto-js';
 import { sha256 } from 'js-sha256';
 import ACCOUNTS from '../accounts';
 import React, {useEffect, useState} from "react";
+import { useLocation } from "react-router-dom";
 
 const Landing = ({ navigate }) => {
     const DEFAULT_USER_INFO = {"displayName": "", "formDisplayName": "", "gender": ""};
     const [userInfo, setUserInfo] = useState(DEFAULT_USER_INFO)
+    const location = useLocation();
 
     const getUserInfo = (user, id) => {
         if (user != "" ) {
@@ -34,19 +36,28 @@ const Landing = ({ navigate }) => {
             const build_id = Builder(cookie_user);
             const access = sha256(build_id) === cookie_hash ? true : false;
             if (!access) {
-                navigate('/login');
+                navigate('/wedding/login');
             }
             else {
                 setUserInfo(getUserInfo(cookie_user, build_id))
             }
         }
         else {
-            navigate('/login');
+            navigate('/wedding/login');
         }
     }, []);
+    useEffect(() => {
+        if (location.hash) {
+            let elem = document.getElementById(location.hash.slice(1));
+            if (elem) {
+                elem.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+    }, [location]);
+
     return (
         <div className="landing-container">
-            <Nav />
+            <Nav location={location}/>
             <WeddingInvite userInfo={userInfo}/>
             <Place />
             <DressCode userInfo={userInfo}/>

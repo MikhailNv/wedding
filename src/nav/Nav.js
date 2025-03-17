@@ -1,9 +1,9 @@
 import '../index.css';
 import './Nav.css';
 import wedding_card from "./images/wedding_couple.svg"
-import up_logo from "./images/up.svg"
 import close_logo from "./images/close.svg"
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 const NavMini = ({ handleMenuClick }) => {
@@ -36,22 +36,46 @@ const NavMax = ({ handleMenuClick }) => {
                     <img src={wedding_card} alt="card-logo"></img>
                 </div>
                 <div className="menu-item">
-                    <a className="subtitle" href="#invitation-section" onClick={handleNavLinkClick}>Invitation</a>
+                    <Link
+                    to={{ pathname: "/wedding/invitation", hash: "#invitation-section" }}
+                    onClick={handleNavLinkClick}>
+                        Invitation
+                    </Link>
                 </div>
                 <div className="menu-item">
-                    <a className="subtitle" href="#vanue-section" onClick={handleNavLinkClick}>Location</a>
+                    <Link
+                    to={{ pathname: "/wedding/invitation", hash: "#vanue-section" }}
+                    onClick={handleNavLinkClick}>
+                        Location
+                    </Link>
                 </div>
                 <div className="menu-item">
-                    <a className="subtitle" href="#dress-code-section" onClick={handleNavLinkClick}>Dress Code</a>
+                    <Link
+                    to={{ pathname: "/wedding/invitation", hash: "#dress-code-section" }}
+                    onClick={handleNavLinkClick}>
+                        Dress Code
+                    </Link>
                 </div>
                 <div className="menu-item">
-                    <a className="subtitle" href="#program-section" onClick={handleNavLinkClick}>Program</a>
+                    <Link
+                    to={{ pathname: "/wedding/invitation", hash: "#program-section" }}
+                    onClick={handleNavLinkClick}>
+                        Program
+                    </Link>
                 </div>
                 <div className="menu-item">
-                    <a className="subtitle" href="#organization-section" onClick={handleNavLinkClick}>Organization</a>
+                    <Link
+                    to={{ pathname: "/wedding/invitation", hash: "#organization-section" }}
+                    onClick={handleNavLinkClick}>
+                        Organization
+                    </Link>
                 </div>
                 <div className="menu-item">
-                    <a className="subtitle" href="#timer" onClick={handleNavLinkClick}>Time left</a>
+                    <Link
+                    to={{ pathname: "/wedding/invitation", hash: "#timer" }}
+                    onClick={handleNavLinkClick}>
+                        Time left
+                    </Link>
                 </div>
             </div>
             <div

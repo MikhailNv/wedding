@@ -41,6 +41,12 @@
     font-size: 1.5rem;
     font-family: "Gaqire", serif;
     text-decoration: none;
+    color: black;
+}
+
+.menu-item a:visited {
+    text-decoration: none;
+    color: black;
 }
 
 .menu-close {
