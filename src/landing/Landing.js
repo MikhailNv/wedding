@@ -36,14 +36,14 @@ const Landing = ({ navigate }) => {
             const build_id = Builder(cookie_user);
             const access = sha256(build_id) === cookie_hash ? true : false;
             if (!access) {
-                navigate('/wedding/login');
+                navigate('/login');
             }
             else {
                 setUserInfo(getUserInfo(cookie_user, build_id))
             }
         }
         else {
-            navigate('/wedding/login');
+            navigate('/login');
         }
     }, []);
     useEffect(() => {

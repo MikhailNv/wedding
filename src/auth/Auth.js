@@ -18,7 +18,7 @@ const Auth = ({ navigate }) => {
         if (cookie_user && cookie_hash) {
             const access = sha256(Builder(cookie_user)) === cookie_hash ? true : false;
             if (access) {
-                navigate('/wedding/invitation');
+                navigate('/invitation');
             }
         }
     }, []);
@@ -42,7 +42,7 @@ const Auth = ({ navigate }) => {
             expires.setTime(expires.getTime() + 86400000)
             cookies.set("user", login_hash, { path: "/", expires: expires })
             cookies.set("hash", sha256(Builder(login_hash)), { path: "/", expires: expires })
-            navigate('/wedding/invitation');
+            navigate('/invitation');
         }
         else {
             var login_inp = document.getElementById('login');

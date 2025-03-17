@@ -37,42 +37,42 @@ const NavMax = ({ handleMenuClick }) => {
                 </div>
                 <div className="menu-item">
                     <Link
-                    to={{ pathname: "/wedding/invitation", hash: "#invitation-section" }}
+                    to={{ pathname: "/invitation", hash: "#invitation-section" }}
                     onClick={handleNavLinkClick}>
                         Invitation
                     </Link>
                 </div>
                 <div className="menu-item">
                     <Link
-                    to={{ pathname: "/wedding/invitation", hash: "#vanue-section" }}
+                    to={{ pathname: "/invitation", hash: "#vanue-section" }}
                     onClick={handleNavLinkClick}>
                         Location
                     </Link>
                 </div>
                 <div className="menu-item">
                     <Link
-                    to={{ pathname: "/wedding/invitation", hash: "#dress-code-section" }}
+                    to={{ pathname: "/invitation", hash: "#dress-code-section" }}
                     onClick={handleNavLinkClick}>
                         Dress Code
                     </Link>
                 </div>
                 <div className="menu-item">
                     <Link
-                    to={{ pathname: "/wedding/invitation", hash: "#program-section" }}
+                    to={{ pathname: "/invitation", hash: "#program-section" }}
                     onClick={handleNavLinkClick}>
                         Program
                     </Link>
                 </div>
                 <div className="menu-item">
                     <Link
-                    to={{ pathname: "/wedding/invitation", hash: "#organization-section" }}
+                    to={{ pathname: "/invitation", hash: "#organization-section" }}
                     onClick={handleNavLinkClick}>
                         Organization
                     </Link>
                 </div>
                 <div className="menu-item">
                     <Link
-                    to={{ pathname: "/wedding/invitation", hash: "#timer" }}
+                    to={{ pathname: "/invitation", hash: "#timer" }}
                     onClick={handleNavLinkClick}>
                         Time left
                     </Link>
