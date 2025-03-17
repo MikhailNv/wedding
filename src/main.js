@@ -1,7 +1,7 @@
 import Auth from './auth/Auth';
 import Landing from './landing/Landing';
-import React, { useEffect } from "react";
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import React from "react";
+import { HashRouter, Routes, Route, useNavigate } from "react-router-dom";
 
 
 const WeddingRouter = ({ navigate }) => {
@@ -19,6 +19,7 @@ const Root = () => {
     const navigate = useNavigate();
     return (
         <Routes>
+            <Route path="*" element={<WeddingRouter navigate={navigate}/>} />
             <Route path="/wedding/*" element={<WeddingRouter navigate={navigate}/>} />
         </Routes>
     );
@@ -26,9 +27,9 @@ const Root = () => {
 
 const Main = () => {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Root />
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 

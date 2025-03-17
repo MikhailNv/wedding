@@ -19,7 +19,7 @@ const Auth = ({ navigate }) => {
         if (cookie_user && cookie_hash) {
             const access = sha256(Builder(cookie_user)) === cookie_hash ? true : false;
             if (access) {
-                navigate('/wedding/invitation');
+                navigate('/invitation');
             }
         }
     }, []);
@@ -27,9 +27,6 @@ const Auth = ({ navigate }) => {
     const checkAccess = (login, psw) => {
         var check_access = false;
         const login_hash = sha256(login);
-        console.log(CryptoJS.AES.encrypt(JSON.stringify({"displayName": "роберт", "formDisplayName": "Роберт Бородий", "gender": "male"}), psw).toString())
-        console.log(`BUILDER: ${Builder(login_hash)}`)
-        console.log(`LOGIN_HASH: ${login_hash}`)
         if (login_hash in ACCOUNTS) {
             if (Builder(login_hash) === psw) { check_access = true; }
             else { check_access = false; }
@@ -46,7 +43,7 @@ const Auth = ({ navigate }) => {
             expires.setTime(expires.getTime() + 86400000)
             cookies.set("user", login_hash, { path: "/", expires: expires })
             cookies.set("hash", sha256(Builder(login_hash)), { path: "/", expires: expires })
-            navigate('/wedding/invitation');
+            navigate('/invitation');
         }
         else {
             var login_inp = document.getElementById('login');
